@@ -1,0 +1,21 @@
+<p>
+    <h1>Print your final receipt...</h1>
+</p>
+<p>
+    <%= form_with(url: "/result", method: :get, local: false) do |form| %>
+        <%= form.label :query, "Input all your items", style: "display: block" %>
+        <%= form.text_area :query, size: "70x5", 
+            value: "1 book at 12.49\n1 music CD at 14.99\n1 chocolate bar at 0.85"
+        %>
+        <%= form.submit "Print", data: {disable_with: "Printing..."}, style: "display: block" %>
+    <% end %>
+</p>
+<p>
+    <hr>
+</p>
+<p>
+ <h2>Result</h2>
+</p>
+<p>
+    <div id="result_div">
+</p>
